@@ -1,15 +1,17 @@
 {
-  "name": "codex-js",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "parcel": "^2.8.3"
-  }
+	"name": "codex-js",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "concurrently \"npm run start:db\" \"npm run start:parcel\"",
+		"start:db": "json-server -w db.json -p 3001",
+		"start:parcel": "parcel -p 3000 index.html"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"parcel": "^2.8.3"
+	}
 }
